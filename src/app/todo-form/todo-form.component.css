@@ -1,0 +1,7 @@
+.ng-valid:not(form) {
+  color: #42a948;
+}
+
+.ng-invalid:not(form) {
+  color: #a94442;
+}

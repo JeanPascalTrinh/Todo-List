@@ -1,0 +1,23 @@
+<div class="progress" *ngIf="isLoading === true">
+  <div class="indeterminate"></div>
+</div>
+
+<!--
+<input type="text" [(ngModel)]="inputValue" placeholder="Nouvelle Tâche" />
+
+<button (click)="addTodoItem()" class="blue-grey waves-effect waves-light btn">
+  <i class="material-icons right">send</i>Ajouter une tache
+</button>
+-->
+
+<app-todo-form (todoUpdatedFormEvent)="addTodoItem($event)"></app-todo-form>
+
+<div *ngIf="isLoading === false">
+  <app-todo-item
+    *ngFor="let todo of todos"
+    [tache]="todo"
+    (todoUpdatedEvent)="notifyUserTodoUpdated($event)"
+    (todoDeleteEvent)="notifyUserDeleted($event)"
+  >
+  </app-todo-item>
+</div>
