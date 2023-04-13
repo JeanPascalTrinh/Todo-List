@@ -15,6 +15,7 @@ export class TodoFormComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (form.valid) {
       this.todoUpdatedFormEvent.emit(this.inputFormValue);
+      this.inputFormValue = '';
     }
   }
 
